@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Hira Fatima | Portfolio</title>
+
+<style>
+:root{
+  --primary:#3b82f6;
+  --bg:#0b1220;
+  --card:#111827;
+  --text:#e5e7eb;
+  --muted:#9ca3af;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(10,15,30,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+nav h2{color:var(--primary);}
+nav a{
+  color:var(--text);
+  margin-left:20px;
+  text-decoration:none;
+  font-size:14px;
+}
+nav a:hover{color:var(--primary);}
+
+section{
+  min-height:100vh;
+  padding:120px 10% 80px;
+  display:flex;
+  align-items:center;
+}
+
+#home{justify-content:space-between;}
+.hero-left{max-width:550px;}
+.hero-left h1{font-size:52px;line-height:1.2;}
+.hero-left span{color:var(--primary);}
+.hero-left p{margin-top:15px;color:var(--muted);font-size:18px;}
+
+#about{justify-content:center;}
+#about p{max-width:750px;color:var(--muted);line-height:1.8;}
+
+.skills{
+  margin-top:20px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+.skills span{
+  background:var(--card);
+  padding:10px 16px;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.projects{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.project{
+  background:var(--card);
+  padding:22px;
+  border-radius:10px;
+  transition:0.4s ease;
+}
+.project:hover{
+  transform:translateY(-8px);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+.project a{
+  display:inline-block;
+  margin-top:12px;
+  color:var(--primary);
+  text-decoration:none;
+  font-size:14px;
+}
+.project a:hover{text-decoration:underline;}
+
+.contact-info p{margin:8px 0;}
+.contact-info a{
+  color:var(--primary);
+  text-decoration:none;
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+@media(max-width:768px){
+  #home{flex-direction:column;text-align:center}
+  .hero-left h1{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Hira Fatima</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section id="home" class="reveal">
+  <div class="hero-left">
+    <h1>Hi, I'm <span>Hira Fatima</span></h1>
+    <p>Computer Science Student & Web Developer creating modern digital experiences.</p>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <div>
+    <h2>About Me</h2>
+    <p>
+      I am a passionate Computer Science student who enjoys designing and developing
+      clean, modern and user-friendly websites with responsive layouts.
+    </p>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <div>
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>C++</span>
+      <span>MS Office</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <div>
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="project">
+        <h3>Image Gallery</h3>
+        <p>Professional gallery with filters, lightbox and animations.</p>
+        <a href="codealpha-imagegallery.html" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project">
+        <h3>Calculator App</h3>
+        <p>Responsive calculator with keyboard support and modern UI.</p>
+        <a href="codealpha-calculator.html" target="_blank">View Project →</a>
+      </div>
+
+      <div class="project">
+        <h3>Personal Portfolio</h3>
+        <p>Modern portfolio website with smooth transitions.</p>
+        <a href="#" target="_blank">View Project →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="contact" class="reveal">
+  <div>
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p>Email: <a href="mailto:hiraf5050@gmail.com">hiraf5050@gmail.com</a></p>
+      <p>Phone: <a href="tel:03286411432">03286411432</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+window.addEventListener('scroll', function(){
+  document.querySelectorAll('.reveal').forEach(el=>{
+    let windowHeight = window.innerHeight;
+    let revealTop = el.getBoundingClientRect().top;
+    if(revealTop < windowHeight - 100){
+      el.classList.add('active');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
